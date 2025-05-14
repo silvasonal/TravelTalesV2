@@ -1,39 +1,20 @@
-# version: '3.8'
-
 services:
   blog-service:
     build: ./Microservices/blog-service
     ports:
       - "5000:5000"
     environment:
-      - DB_HOST=host.docker.internal
+      - DB_HOST=host.docker.internal  # Make sure this matches the GitHub Actions PostgreSQL service
       - DB_USER=postgres
       - DB_PASSWORD=123
       - DB_NAME=Coursework
       - DB_PORT=5432
       - JWT_SECRET=your_jwt_secret
-    depends_on:
-      - db
-    volumes:
-      - ./Microservices/blog-service:/app
-      - /app/node_modules
 
   mf-blog:
     build: ./Microfrontends/mf-blog
     ports:
       - "3000:3000"
-    depends_on:
-      - blog-service
-
-  # db:
-  #   image: postgres:15
-  #   restart: always
-  #   ports:
-  #     - "5432:5432"
-  #   environment:
-  #     POSTGRES_USER: postgres
-  #     POSTGRES_PASSWORD: 123
-  #     POSTGRES_DB: Coursework
 
   country-service:
     build: ./Microservices/country-service
