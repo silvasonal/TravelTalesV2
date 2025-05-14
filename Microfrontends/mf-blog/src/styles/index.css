@@ -1,0 +1,485 @@
+body {
+  font-family: Arial, Helvetica, sans-serif
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.form-card {
+  background: white;
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+}
+
+.form-card h2 {
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.form-label{
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.input-group input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.form-button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #16a085;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  background-color: #149174;
+}
+
+.forgot-password {
+  text-align: right;
+  font-size: 0.9rem;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.forgot-password a {
+  color: #007bff;
+}
+
+.forgot-password a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+
+/* Sidebar styles */
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  color: #ccc;
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-size: 16px;
+  transition: 0.2s ease-in-out;
+}
+
+.nav-item:hover {
+  color: #ddd;
+}
+
+.nav-icon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.profile-section {
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+
+
+/* Home styles */
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 2rem;
+}
+
+.toggle-buttons button {
+  padding: 5px 10px;
+  border: 1px solid #149174;
+  background-color: white;
+  color: #16a085;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.toggle-buttons button.active,
+.toggle-buttons button:hover {
+  background-color: #16a085;
+  color: white;
+}
+
+.posts-container {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);  /* This ensures 2 items per row */
+  gap: 1.5rem;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.no-posts-message  {
+  font-size: 1.3rem;
+  color: #666;
+  margin-left: auto;
+}
+
+.post-card {
+  position: relative;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  height: 400px;
+}
+
+.post-actions {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 10px;
+  z-index: 1;
+}
+
+.actions-button{
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  font-size: 1.3rem;
+}
+
+.update-icon {
+  color: #149174;
+}
+
+.delete-icon {
+  color: #dc3545;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.post-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.post-card p {
+  margin: 0.3rem 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.post-card .author {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #555;
+  cursor: pointer;
+}
+
+.likes-dislikes {
+  margin-top: 1rem;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.likes-dislikes span {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.icon-button {
+  cursor: pointer;
+  margin-right: 10px;
+  color: #555;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.3s;
+}
+
+.icon-button.reacted {
+  color: #149174;
+}
+
+.icon-button:hover {
+  color: #149174;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 30px;
+  gap: 10px;
+}
+
+.search-input {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  max-width: 200px;
+}
+
+.search-button {
+  padding: 0.25rem 0.5rem;
+}
+
+.clear-button {
+  margin-left: 8px;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 4px;
+}
+
+
+/* Profile.css */
+.profile-page {
+  font-family: 'Arial', sans-serif;
+  padding: 20px 20px;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.profile-info {
+  font-size: 18px;
+  margin: 5px 0;
+  color: #333;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 40px;
+}
+
+.link-text {
+  color: #16a085;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.custom-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.list-item {
+  padding: 10px;
+  font-size: 16px;
+  border-bottom: 1px solid #ddd;
+  color: #444;
+  transition: background-color 0.3s ease;
+}
+
+.list-item:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+
+.follow-buttons {
+  margin-top: 10px;
+}
+
+.follow-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Follow button style */
+.follow-btn.follow {
+  background-color: #0d6efd; /* Bootstrap primary */
+  color: white;
+}
+
+.follow-btn.follow:hover {
+  background-color: #0b5ed7;
+}
+
+/* Unfollow button style */
+.follow-btn.unfollow {
+  background-color: #f8f9fa;
+  color: #dc3545;
+  border: 1px solid #dc3545;
+}
+
+.follow-btn.unfollow:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+.filter-options {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+.filter-options button {
+  padding: 6px 12px;
+  background-color: #eee;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.filter-options button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+
+
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination-controls button {
+  padding: 6px 12px;
+  margin: 0 5px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination-controls button:disabled {
+  background-color: #b0b0b0;
+  cursor: not-allowed;
+}
+
+
+.comment-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.comment-text {
+  font-size: 16px;
+  color: #333;
+  margin-right: 15px; 
+  flex-grow: 1;
+  line-height: 1.4;
+}
+
+.username {
+  font-size: 14px;
+  color: #149174; 
+  font-weight: 600; 
+  margin-left: 5px;
+}
+
+.postModal-actions-container {
+  display: flex;
+  justify-content: flex-end; 
+  gap: 10px;  
+  margin-top: 10px;
+  margin-bottom: 10px;  
+}
+
+.postModal-updateButton {
+  background-color: #16a085;
+  color: white;
+  padding: 6px 14px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.postModal-updateButton:hover {
+  background-color: #149174;
+}
+
+.country-info-container {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  background-color: #f8f9fa;
+  max-width: 40%;
+}
+
+.country-info-title {
+  margin-bottom: 1rem;
+  color: #149174;
+}
+
+.country-info-text {
+  color: #6c757d;
+}
+
+.country-info-flag {
+  width: 120px;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  outline: #6c757d 1px solid;
+}
+
+.country-currency-info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 20px;
+}
+.country-currency-item {
+  color: #6c757d;
+}
+.country-currency-label {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
