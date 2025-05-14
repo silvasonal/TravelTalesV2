@@ -25,15 +25,15 @@ services:
     depends_on:
       - blog-service
 
-  db:
-    image: postgres:15
-    restart: always
-    ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 123
-      POSTGRES_DB: Coursework
+  # db:
+  #   image: postgres:15
+  #   restart: always
+  #   ports:
+  #     - "5432:5432"
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: 123
+  #     POSTGRES_DB: Coursework
 
   country-service:
     build: ./Microservices/country-service
