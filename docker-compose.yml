@@ -18,8 +18,8 @@ services:
       - ./Microservices/blog-service:/app
       - /app/node_modules
 
-  mf-Blog:
-    build: ./Microfrontends/mf-Blog
+  mf-blog:
+    build: ./Microfrontends/mf-blog
     ports:
       - "3000:3000"
     depends_on:

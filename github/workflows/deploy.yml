@@ -1,0 +1,56 @@
+name: CI/CD for TravelTalesV2
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: 123
+          POSTGRES_DB: Coursework
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build blog-service
+        run: docker build -t blog-service ./Microservices/blog-service
+
+      - name: Build country-service
+        run: docker build -t country-service ./Microservices/country-service
+
+      - name: Build mf-blog
+        run: docker build -t mf-blog ./Microfrontends/mf-blog
+
+      - name: Start services with Docker Compose
+        run: docker-compose up -d
+
+      - name: Wait for services to be ready
+        run: sleep 15
+
+      - name: Run tests (Optional)
+        run: echo "Insert your test scripts here"
+
+      - name: Stop services
+        run: docker-compose down
